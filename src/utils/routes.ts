@@ -1,5 +1,5 @@
-export const homePage = '/';
-export const profilePage = '/profile';
-export const purchasePage = '/pay';
-export const signInPage = '/signin';
-export const signUpPage = '/signup';
+export const homeUrl = '/';
+export const profileUrl = '/profile';
+export const purchaseUrl = '/pay';
+export const signinUrl = '/signin';
+export const signupUrl = '/signup';

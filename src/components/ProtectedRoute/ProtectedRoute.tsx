@@ -1,6 +1,6 @@
 import { useEffect, FC, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { homePage, signInPage } from '../../utils/routes';
+import { homeUrl, signinUrl } from '../../utils/routes';
 
 type TProtectedRoute = {
   children: JSX.Element;
@@ -29,11 +29,11 @@ const ProtectedRoute: FC<TProtectedRoute> = ({
   }, []);
 
   if (token && notAuth) {
-    return <Navigate to={homePage} />;
+    return <Navigate to={homeUrl} />;
   }
 
   if (!notAuth && !token) {
-    return <Navigate to={signInPage} />;
+    return <Navigate to={signinUrl} />;
   }
 
   return children;

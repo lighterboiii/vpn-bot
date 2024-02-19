@@ -1,0 +1,36 @@
+@use '../../stylesheets/mixins' as *;
+
+.signup {
+  @include indents(0 20px, 0 auto);
+  @include flex(column, flex-end, center, 8px);
+  height: 95vh; // обязательно поправить после удаления ссылок в шапке
+
+  &__title {
+    @include indents(20px, 0);
+    text-align: center;
+  }
+
+  &__text {
+    @include indents(20px, 0);
+    text-align: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: rgb(59, 59, 179);
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  &__button {
+    @include button-style-reset();
+    @include indents(8px 16px, 0);
+    border: 1px rgb(18, 162, 18) solid;
+    border-radius: 25px;
+  }
+}
+
+.form {
+  @include flex(column, space-between, center, 16px);
+  margin: 0 auto 36px;
+}

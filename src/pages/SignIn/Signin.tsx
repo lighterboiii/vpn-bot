@@ -14,9 +14,9 @@ const SignInPage: FC = () => {
     <div className={styles.signin}>
       <h2 className={styles.signin__title}>Вход</h2>
       <form className={styles.form} onSubmit={onFormSubmit}>
-        <input name='email' value={email}required />
-        <input name='password' value={password} required />
-        <button type='submit'>Войти</button>
+        <input name='email' value={email} placeholder='Логин' required />
+        <input name='password' value={password} placeholder='Пароль' required />
+        <button type='submit' className={styles.signin__button}>Войти</button>
       </form>
       <div className={styles.signin__links}>
         <p className={styles.signin__text}>Вы новый пользователь?

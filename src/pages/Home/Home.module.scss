@@ -1,0 +1,40 @@
+@use '../../stylesheets/mixins' as *;
+
+.home {
+  @include indents(0 20px, 0);
+  @include flex(column, center, center);
+  text-align: center;
+
+  &__header {
+    @include indents();
+    @include flex(column, $align-items: center, $gap: 8px);
+  }
+
+  &__links {
+    @include flex(row, center, space-between, 8px);
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__button {
+    @include button-style-reset();
+    @include indents(8px 16px, 0);
+    border: 1px rgb(18, 162, 18) solid;
+    border-radius: 25px;
+  }
+
+  &__title, &__text {
+    @include indents();
+  }
+
+  &__title {
+    @include indents(20px, 0 auto);
+  }
+
+  &__text {
+    @include indents(8px 8px 20px, 0 auto);
+  }
+}

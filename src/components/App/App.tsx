@@ -1,5 +1,4 @@
 import HomePage from '../../pages/Home/Home';
-import styles from './App.module.scss';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ProfilePage from '../../pages/Profile/Profile';
 import PurchasePage from '../../pages/Purchase/Purchase';
@@ -7,19 +6,22 @@ import { homeUrl, signinUrl, signupUrl, profileUrl, purchaseUrl } from '../../ut
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import SignUpPage from '../../pages/Signup/Signup';
 import SignInPage from '../../pages/SignIn/Signin';
+import styles from './App.module.scss';
 
 function App() {
   return (
     <div className={styles.app}>
       <Router basename={process.env.PUBLIC_URL}>
-        <nav>
-          <p>Для удобства тут расположу ссылки на все маршруты</p>
-          <Link to={signinUrl}>Вход</Link>
-          <Link to={signupUrl}>Регистрация</Link>
-          <Link to={homeUrl}>Домашняя</Link>
-          <Link to={profileUrl}>Личный кабинет</Link>
-          <Link to={purchaseUrl}>Оплата</Link>
-        </nav>
+        <div className={styles.nav}>
+          <p className={styles.nav__text}>Для удобства тут расположу ссылки на все маршруты</p>
+          <nav className={styles.nav__container}>
+            <Link className={styles.nav__link} to={signinUrl}>Вход</Link>
+            <Link className={styles.nav__link} to={signupUrl}>Регистрация</Link>
+            <Link className={styles.nav__link} to={homeUrl}>Домашняя</Link>
+            <Link className={styles.nav__link} to={profileUrl}>Личный кабинет</Link>
+            <Link className={styles.nav__link} to={purchaseUrl}>Оплата</Link>
+          </nav>
+        </div>
         <Routes>
           <Route path={signinUrl} element={<ProtectedRoute children={<SignInPage />} notAuth />} />
           <Route path={signupUrl} element={<ProtectedRoute children={<SignUpPage />} notAuth />} />

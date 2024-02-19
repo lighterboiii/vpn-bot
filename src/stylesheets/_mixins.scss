@@ -1,0 +1,43 @@
+/* flex-container */
+@mixin flex($direction: row, $justify-content: false, $align-items: false, $gap: false){
+  display: flex;
+  flex-direction: $direction;
+  @if $justify-content {
+    justify-content: $justify-content;
+  }
+  @if $align-items {
+    align-items: $align-items
+  }
+  @if $gap {
+    gap: $gap;
+  }
+};
+/* Сброс отступов */
+@mixin indents($padding: 0, $margin: 0) {
+  padding: $padding;
+  margin: $margin;
+};
+/* Сброс стиля кнопок и единый курсор */
+@mixin button-style-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+/* Скрытие скроллбара */
+@mixin hide-scroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* Сброс стиля инпута */
+@mixin input-style-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+}

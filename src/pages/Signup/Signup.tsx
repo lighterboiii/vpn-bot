@@ -12,13 +12,13 @@ const SignUpPage: FC = () => {
       <h2 className={styles.signup__title}>Зарегистрируйтесь для продолжения</h2>
       <form className={styles.form}>
         <input type='text' name='name' value={name} placeholder='Имя'/>
-        <input name='email' value={email} />
-        <input name='password' value={password} />
-        <button type='submit'>Зарегистрироваться</button>
+        <input name='email' placeholder='Почта' value={email} />
+        <input name='password' placeholder='Пароль' value={password} />
+        <button type='submit' className={styles.signup__button}>Зарегистрироваться</button>
       </form>
       <div className={styles.signup__linkContainer}>
         <p className={styles.signup__text}>Уже зарегистрированы?
-          <Link to='/signin' className={styles.signup__link}>Войти</Link>
+          <Link to='/signin' className={styles.signup__link}> Войти</Link>
         </p>
       </div>
     </div> 

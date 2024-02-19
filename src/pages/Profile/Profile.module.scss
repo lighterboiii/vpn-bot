@@ -1,0 +1,6 @@
+@use '../../stylesheets/mixins' as *;
+
+.profile {
+  @include indents(20px, 0);
+  @include flex(column, space-between, flex-start, 16px);
+}

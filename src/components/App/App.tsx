@@ -11,7 +11,7 @@ import SignInPage from '../../pages/SignIn/Signin';
 function App() {
   return (
     <div className={styles.app}>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <nav>
           <p>Для удобства тут расположу ссылки на все маршруты</p>
           <Link to={signinUrl}>Вход</Link>

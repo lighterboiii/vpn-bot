@@ -20,22 +20,26 @@ const SignUpPage: FC = () => {
           value={values.name.value}
           placeholder='Имя'
           onChange={handleChange}
+          className={styles.form__input}
         />
         <input
           name='email'
           placeholder='Почта'
           value={values.email.value}
           onChange={handleChange}
+          className={styles.form__input}
         />
         <input
           name='password'
           placeholder='Пароль'
           value={values.password.value}
           onChange={handleChange}
+          className={styles.form__input}
         />
         <button
           type='submit'
-          className={styles.signup__button}>
+          className={styles.form__button}
+        >
           Зарегистрироваться
         </button>
       </form>

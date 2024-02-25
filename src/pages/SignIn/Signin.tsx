@@ -1,9 +1,12 @@
 import { FC, FormEvent } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from './Signin.module.scss';
 import useForm from '../../services/hooks/useForm';
+import { profileUrl } from '../../utils/routes';
 
 const SignInPage: FC = () => {
+  const navigate = useNavigate();
+
   const { values, handleChange } = useForm({
     email: { value: '' },
     password: { value: '' }
@@ -24,6 +27,7 @@ const SignInPage: FC = () => {
           placeholder='Логин'
           required
           onChange={handleChange}
+          className={styles.form__input}
         />
         <input
           name='password'
@@ -31,10 +35,15 @@ const SignInPage: FC = () => {
           placeholder='Пароль'
           required
           onChange={handleChange}
+          className={styles.form__input}
         />
         <button
           type='submit'
-          className={styles.signin__button}>Войти</button>
+          className={styles.form__button}
+          onClick={() => navigate(profileUrl)}
+        >
+          Войти
+        </button>
       </form>
       <div className={styles.signin__links}>
         <p className={styles.signin__text}>Вы новый пользователь?

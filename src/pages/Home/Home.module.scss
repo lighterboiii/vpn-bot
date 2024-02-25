@@ -11,21 +11,12 @@
     @include flex(column, $align-items: center, $gap: 8px);
   }
 
-  &__links {
+  &__buttons {
     @include flex(row, center, space-between, 8px);
   }
 
-  &__link {
-    text-decoration: none;
-    color: var(--tg-theme-link-color);
-  }
-
   &__button {
-    @include button-style-reset();
-    @include indents(8px 16px, 0);
-    background: var(--tg-theme-button-color);
-    // color: var(--tg-theme-button-text-color);
-    border-radius: 25px;
+    @include main-button-style();
   }
 
   &__title, &__text {

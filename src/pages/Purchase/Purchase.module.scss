@@ -1,0 +1,13 @@
+@use '../../stylesheets/mixins' as *;
+
+.purchase {
+  @include indents();
+  @include flex(column, center, center, 16px);
+  height: 95vh;
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--tg-theme-accent-text-color);
+  }
+}

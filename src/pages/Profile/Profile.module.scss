@@ -2,5 +2,24 @@
 
 .profile {
   @include indents(20px, 0);
-  @include flex(column, space-between, flex-start, 16px);
+  @include flex(column, center, flex-start, 16px);
+  height: 95vh; // обязательно поправить после удаления ссылок в шапке
+
+  &__button {
+    @include main-button-style();
+    align-self: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--tg-theme-link-color);
+  }
+
+  &__subStatus {
+    color: green;
+  }
+
+  &__subStatusEnded {
+    color: red;
+  }
 }

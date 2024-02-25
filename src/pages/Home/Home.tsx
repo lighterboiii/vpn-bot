@@ -1,10 +1,11 @@
 import { FC } from "react";
 import styles from './Home.module.scss';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { signinUrl, signupUrl } from "../../utils/routes";
 import useTelegram from "../../services/hooks/useTelegram";
 
 const HomePage: FC = () => {
+  const navigate = useNavigate();
   const { user } = useTelegram();
 
   console.log(user);
@@ -15,9 +16,13 @@ const HomePage: FC = () => {
         <h2 className={styles.home__title}>{`Привет, ${user?.first_name}`}</h2>
         <p className={styles.home__text}>Добро пожаловать в сервис управления доступом к самому лучшему в мире VPN-сервису</p>
       </div>
-      <nav className={styles.home__links}>
-        <button className={styles.home__button}><Link to={signinUrl} className={styles.home__link}>Войти</Link></button>
-        <button className={styles.home__button}><Link to={signupUrl} className={styles.home__link}>Регистрация</Link></button>
+      <nav className={styles.home__buttons}>
+        <button className={styles.home__button} onClick={() => navigate(signinUrl)}>
+          Войти
+        </button>
+        <button className={styles.home__button} onClick={() => navigate(signupUrl)}>
+          Регистрация
+        </button>
       </nav>
     </div>
   )

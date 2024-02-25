@@ -21,6 +21,6 @@ function useForm (inputValues: any) {
     handleChange,
     setValues,
   };
-}
+};
 
 export default useForm;

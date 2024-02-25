@@ -1,7 +1,7 @@
 @use '../../stylesheets/mixins' as *;
 
 .signin {
-  @include indents(0 20px, 0 auto);
+  @include indents(0 20px 40px, 0);
   @include flex(column, flex-end, center, 8px);
   height: 95vh; // обязательно поправить после удаления ссылок в шапке
 

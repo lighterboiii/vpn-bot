@@ -5,6 +5,10 @@
   @include flex(column, flex-end, center, 8px);
   height: 95vh; // обязательно поправить после удаления ссылок в шапке
 
+  &__title, &__text {
+    color: var(--tg-theme-text-color);
+  }
+
   &__title {
     @include indents(20px, 0);
     text-align: center;
@@ -17,7 +21,7 @@
 
   &__link {
     text-decoration: none;
-    color: rgb(59, 59, 179);
+    color: var(--tg-theme-link-color);
     cursor: pointer;
     font-weight: 700;
   }

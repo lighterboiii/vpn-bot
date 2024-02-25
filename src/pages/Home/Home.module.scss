@@ -16,7 +16,7 @@
 
   &__link {
     text-decoration: none;
-    color: inherit;
+    color: var(--tg-theme-link-color);
   }
 
   &__button {
@@ -29,6 +29,7 @@
 
   &__title, &__text {
     @include indents();
+    color: var(--tg-theme-text-color);
   }
 
   &__title {

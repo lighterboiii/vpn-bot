@@ -13,8 +13,8 @@ const ProfilePage: FC = () => {
 
   return (
     <div className={styles.profile}>
-        <p>{user}</p>
-        <p>Ваша подписка 
+        <p className={styles.profile__text}>{user}</p>
+        <p className={styles.profile__text}>Ваша подписка 
           <span className={subscriptionStatus ? styles.profile__subStatus : styles.profile__subStatusEnded}>
             {subscriptionStatus ? 
             ' активна' :
@@ -26,7 +26,7 @@ const ProfilePage: FC = () => {
           ' 13.05.2023'
             }
             </p>
-        <Link to='#' className={styles.profile__link}>Ссылка на конфиг?</Link>
+        <Link to='/' className={styles.profile__link}>Ссылка на конфиг?</Link>
         <button
           type="button"
           onClick={() => navigate(signinUrl)}

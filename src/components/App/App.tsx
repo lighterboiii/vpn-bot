@@ -18,7 +18,7 @@ function App() {
             <Link className={styles.nav__link} to={signinUrl}>Вход</Link>
             <Link className={styles.nav__link} to={signupUrl}>Регистрация</Link>
             <Link className={styles.nav__link} to={homeUrl}>Домашняя</Link>
-            <Link className={styles.nav__link} to={profileUrl}>Личный кабинет</Link>
+            <Link className={styles.nav__link} to={profileUrl}>Профиль</Link>
             <Link className={styles.nav__link} to={purchaseUrl}>Оплата</Link>
           </nav>
         </div>

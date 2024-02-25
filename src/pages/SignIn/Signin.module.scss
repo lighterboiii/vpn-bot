@@ -26,18 +26,3 @@
     font-weight: 700;
   }
 }
-
-.form {
-  @include flex(column, space-between, center, 16px);
-  margin: 0 auto 36px;
-
-  &__button {
-    @include main-button-style();
-  }
-
-  &__input {
-    @include indents(10px, 0);
-    border: .5px var(--tg-theme-secondary-bg-color) solid;
-    border-radius: 10px;
-  }
-}

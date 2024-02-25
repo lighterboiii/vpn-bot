@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import styles from './Profile.module.scss';
 import useTelegram from "../../services/hooks/useTelegram";
-import { homeUrl } from "../../utils/routes";
+import { signinUrl } from "../../utils/routes";
 import { Link, useNavigate } from "react-router-dom";
 
 const ProfilePage: FC = () => {
@@ -29,7 +29,7 @@ const ProfilePage: FC = () => {
         <Link to='#' className={styles.profile__link}>Ссылка на конфиг?</Link>
         <button
           type="button"
-          onClick={() => navigate(homeUrl)}
+          onClick={() => navigate(signinUrl)}
           className={styles.profile__button}
         >
           Выход

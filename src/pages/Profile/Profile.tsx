@@ -1,19 +1,16 @@
 import { FC, useState } from "react";
 import styles from './Profile.module.scss';
-import useTelegram from "../../services/hooks/useTelegram";
 import { signinUrl } from "../../utils/routes";
 import { Link, useNavigate } from "react-router-dom";
 
 const ProfilePage: FC = () => {
   const navigate = useNavigate();
-  const { user } = useTelegram();
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [subscriptionStatus, setSubscriptionStatus] = useState(true);
 
   return (
     <div className={styles.profile}>
-        <p className={styles.profile__text}>{user}</p>
         <p className={styles.profile__text}>Ваша подписка 
           <span className={subscriptionStatus ? styles.profile__subStatus : styles.profile__subStatusEnded}>
             {subscriptionStatus ? 

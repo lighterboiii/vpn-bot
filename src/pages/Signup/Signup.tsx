@@ -11,6 +11,7 @@ const SignUpPage: FC = () => {
   const { values, handleChange } = useForm({
     name: { value: '' },
     email: { value: '' },
+    phone: { value: '' },
     password: { value: '' }
   }); // не забыть про валидацию полей
   console.log(values);

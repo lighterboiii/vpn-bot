@@ -10,4 +10,8 @@
     font-size: 24px;
     color: var(--tg-theme-accent-text-color);
   }
+
+  &__button {
+    @include main-button-style();
+  }
 }

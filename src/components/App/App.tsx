@@ -12,7 +12,7 @@ function App() {
   return (
     <div className={styles.app}>
       <Router basename={process.env.PUBLIC_URL}>
-        <div className={styles.nav}>
+        {/* <div className={styles.nav}>
           <p className={styles.nav__text}>Для удобства тут расположу ссылки на все маршруты</p>
           <nav className={styles.nav__container}>
             <Link className={styles.nav__link} to={signinUrl}>Вход</Link>
@@ -21,7 +21,7 @@ function App() {
             <Link className={styles.nav__link} to={profileUrl}>Профиль</Link>
             <Link className={styles.nav__link} to={purchaseUrl}>Оплата</Link>
           </nav>
-        </div>
+        </div> */}
         <Routes>
           <Route path={signinUrl} element={<ProtectedRoute children={<SignInPage />} notAuth />} />
           <Route path={signupUrl} element={<ProtectedRoute children={<SignUpPage />} notAuth />} />

@@ -3,6 +3,7 @@
 .signup {
   @include indents(0 20px 40px, 0);
   @include flex(column, center, center, 8px);
+  width: 100%;
   height: 95vh; // обязательно поправить после удаления ссылок в шапке
 
   &__title, &__text {

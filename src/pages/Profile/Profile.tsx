@@ -23,7 +23,7 @@ const ProfilePage: FC = () => {
           ' 13.05.2023'
             }
             </p>
-        <Link to='/' className={styles.profile__link}>Ссылка на конфиг?</Link>
+        <Link to='/pay' className={styles.profile__link}>Перейти к конфигурации</Link>
         <button
           type="button"
           onClick={() => navigate(signinUrl)}

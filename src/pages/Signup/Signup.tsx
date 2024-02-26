@@ -34,7 +34,7 @@ const SignUpPage: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (!values.email || !values.password || !values.phone || !values.name) {
+    if (!values) {
       tg.MainButton.hide();
     } else {
       tg.MainButton.show();

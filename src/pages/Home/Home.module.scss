@@ -3,7 +3,7 @@
 .home {
   @include indents(0 20px 40px, 0);
   @include flex(column, center, center);
-  height: 95vh; // обязательно поправить после удаления ссылок в шапке
+  @include size(100%, 100%);
   text-align: center;
 
   &__header {

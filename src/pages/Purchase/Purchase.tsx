@@ -14,7 +14,7 @@ const PurchasePage: FC = () => {
           <p>Базовый план 1999р/год</p>
         </div>
         <div>
-          <img src="#" alt="premium_plan_img" />
+          <img src="" alt="premium_plan_img" />
           <p>Премиум план 4999р/год</p>
         </div>
       </div>

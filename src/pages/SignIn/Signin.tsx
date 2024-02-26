@@ -33,7 +33,7 @@ const SignInPage: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (!values.email || !values.password) {
+    if (!values) {
       tg.MainButton.hide();
     } else {
       tg.MainButton.show();

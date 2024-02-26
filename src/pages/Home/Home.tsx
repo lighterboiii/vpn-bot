@@ -22,11 +22,9 @@ const HomePage: FC = () => {
     }
   }, []);
 
-  console.log(user);
   return (
     <div className={styles.home}>
       <div className={styles.home__header}>
-        {/* <img src={user?.photo_url} alt="userAvatar" /> */}
         <h2 className={styles.home__title}>{`Привет, ${user?.first_name}`}</h2>
         <p className={styles.home__text}>Добро пожаловать в сервис управления доступом к самому лучшему в мире VPN-сервису</p>
       </div>

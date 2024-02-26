@@ -13,7 +13,7 @@
   }
 };
 /* Размеры */
-@mixin size($width, $height) {
+@mixin size($width: false, $height: false) {
   width: $width;
   height: $height;
 }

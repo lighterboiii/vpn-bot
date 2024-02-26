@@ -8,7 +8,8 @@
   &__input {
     @include indents(16px, 0);
     @include size(360px, unset);
-    border: .5px var(--tg-theme-secondary-bg-color) solid;
+    background-color: var(--tg-theme-secondary-bg-color);
+    border: .5px var(--tg-theme-accent-text-color) solid;
     border-radius: 10px;
   }
 

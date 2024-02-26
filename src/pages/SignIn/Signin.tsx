@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { FC, FormEvent, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import styles from './Signin.module.scss';
@@ -13,7 +14,8 @@ const SignInPage: FC = () => {
   const { values, handleChange } = useForm({
     email: { value: '' },
     password: { value: '' }
-  });// не забыть про валидацию полей
+  });
+  // не забыть про валидацию полей
   // сделать миксин стилей для формы или создать отдельный компонент
   console.log(values);
   const fields = signInPageFormFields(values);
@@ -52,7 +54,6 @@ const SignInPage: FC = () => {
         fields={fields}
         handleSubmit={onFormSubmit}
         handleChange={handleChange}
-        buttonText='Войти'
       />
       <div className={styles.signin__links}>
         <p className={styles.signin__text}>Вы новый пользователь?

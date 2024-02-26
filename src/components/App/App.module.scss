@@ -1,38 +1,12 @@
+@use '../../stylesheets/mixins' as *;
+
 * {
-  margin: 0;
-  padding: 0;
+  @include indents();
   box-sizing: border-box;
 }
 
 .app {
-  height: 100vh;
+  @include size($height: 100vh);
   background-color: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
-}
-
-.nav {
-  height: 5vh;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-
-  &__container {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-    background-color:  var(--tg-theme-header-bg-color);
-  }
-
-  &__text {
-    padding: 0;
-    margin: 0 auto;
-  }
-
-  &__link {
-    color: var(--tg-theme-link-color);
-    cursor: pointer;
-    font-weight: 400;
-    text-decoration: none;
-  }
 }

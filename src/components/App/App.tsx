@@ -1,4 +1,5 @@
 import HomePage from '../../pages/Home/Home';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ProfilePage from '../../pages/Profile/Profile';
 import PurchasePage from '../../pages/Purchase/Purchase';
@@ -15,21 +16,12 @@ function App() {
 
   useEffect(() => {
     tg.ready();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   return (
     <div className={styles.app}>
       <Router basename={process.env.PUBLIC_URL}>
-        {/* <div className={styles.nav}>
-          <p className={styles.nav__text}>Для удобства тут расположу ссылки на все маршруты</p>
-          <nav className={styles.nav__container}>
-            <Link className={styles.nav__link} to={signinUrl}>Вход</Link>
-            <Link className={styles.nav__link} to={signupUrl}>Регистрация</Link>
-            <Link className={styles.nav__link} to={homeUrl}>Домашняя</Link>
-            <Link className={styles.nav__link} to={profileUrl}>Профиль</Link>
-            <Link className={styles.nav__link} to={purchaseUrl}>Оплата</Link>
-          </nav>
-        </div> */}
         <Routes>
           <Route path={signinUrl} element={<ProtectedRoute children={<SignInPage />} notAuth />} />
           <Route path={signupUrl} element={<ProtectedRoute children={<SignUpPage />} notAuth />} />

@@ -15,4 +15,8 @@
     @include main-button-style();
     @include size(240px, unset);
   }
+
+  &__grid {
+    background-color: var(--tg-theme-secondary-bg-color);
+  }
 }

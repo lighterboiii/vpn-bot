@@ -1,6 +1,7 @@
 import { FC, useEffect } from "react";
 import styles from './Home.module.scss';
 import { useNavigate } from "react-router-dom";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { signinUrl, signupUrl } from "../../utils/routes";
 import useTelegram from "../../services/hooks/useTelegram";
 
@@ -20,6 +21,7 @@ const HomePage: FC = () => {
     return () => {
       tg.MainButton.hide();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

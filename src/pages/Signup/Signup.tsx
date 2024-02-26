@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { FC, FormEvent, useEffect } from "react";
 import styles from './Signup.module.scss';
 import { Link, useNavigate } from "react-router-dom";
@@ -14,9 +15,9 @@ const SignUpPage: FC = () => {
     email: { value: '' },
     phone: { value: '' },
     password: { value: '' }
-  }); // не забыть про валидацию полей
+  }); 
+  // не забыть про валидацию полей выше
   const { tg } = useTelegram();
-  console.log(values);
   const fields = signUpPageFormFields(values);
 
   useEffect(() => {
@@ -53,7 +54,6 @@ const SignUpPage: FC = () => {
         fields={fields}
         handleSubmit={onFormSubmit}
         handleChange={handleChange}
-        buttonText='Регистрация'
       />
       <div className={styles.signup__linkContainer}>
         <p className={styles.signup__text}>Уже зарегистрированы?

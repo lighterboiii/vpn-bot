@@ -13,10 +13,9 @@ interface IUniversalFormProps {
   fields: Field[];
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  buttonText: string;
 }
 
-const UniversalForm: FC<IUniversalFormProps> = ({ fields, handleSubmit, handleChange, buttonText }) => {
+const UniversalForm: FC<IUniversalFormProps> = ({ fields, handleSubmit, handleChange }) => {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       {fields.map((field, index) => (
@@ -32,7 +31,6 @@ const UniversalForm: FC<IUniversalFormProps> = ({ fields, handleSubmit, handleCh
           />
         </div>
       ))}
-      {/* <button type='submit' className={styles.form__button}>{buttonText}</button> */}
     </form>
   );
 };

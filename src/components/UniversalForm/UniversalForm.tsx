@@ -32,7 +32,7 @@ const UniversalForm: FC<IUniversalFormProps> = ({ fields, handleSubmit, handleCh
           />
         </div>
       ))}
-      <button type='submit' className={styles.form__button}>{buttonText}</button>
+      {/* <button type='submit' className={styles.form__button}>{buttonText}</button> */}
     </form>
   );
 };

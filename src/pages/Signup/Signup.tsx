@@ -1,10 +1,11 @@
-import { FC, FormEvent } from "react";
+import { FC, FormEvent, useEffect } from "react";
 import styles from './Signup.module.scss';
 import { Link, useNavigate } from "react-router-dom";
 import useForm from "../../services/hooks/useForm";
 import { signUpPageFormFields } from "../../utils/mockFormFieldsData";
 import UniversalForm from "../../components/UniversalForm/UniversalForm";
 import { profileUrl } from "../../utils/routes";
+import useTelegram from "../../services/hooks/useTelegram";
 
 const SignUpPage: FC = () => {
   const navigate = useNavigate();
@@ -14,8 +15,31 @@ const SignUpPage: FC = () => {
     phone: { value: '' },
     password: { value: '' }
   }); // не забыть про валидацию полей
+  const { tg } = useTelegram();
   console.log(values);
   const fields = signUpPageFormFields(values);
+
+  useEffect(() => {
+    tg.MainButton.setParams({
+      text: 'Регистрация',
+    })
+    tg.MainButton.show();
+    tg.MainButton.onClick(() => {
+      navigate(profileUrl);
+    })
+
+    return () => {
+      tg.MainButton.hide();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!values.email || !values.password || !values.phone || !values.name) {
+      tg.MainButton.hide();
+    } else {
+      tg.MainButton.show();
+    }
+  }, [values])
 
   const onFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

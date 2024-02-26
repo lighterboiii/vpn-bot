@@ -10,7 +10,7 @@ const HomePage: FC = () => {
 
   useEffect(() => {
     tg.MainButton.setParams({
-      text: 'Войти',
+      text: 'Продолжить',
     })
     tg.MainButton.show();
     tg.MainButton.onClick(() => {

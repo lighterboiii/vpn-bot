@@ -9,8 +9,13 @@ const HomePage: FC = () => {
   const { user, tg } = useTelegram();
 
   useEffect(() => {
-    tg.ready();
+    tg.MainButton.setParams({
+      text: 'Войти',
+    })
     tg.MainButton.show();
+    tg.MainButton.onClick(() => {
+      navigate(signinUrl);
+    })
 
     return () => {
       tg.MainButton.hide();

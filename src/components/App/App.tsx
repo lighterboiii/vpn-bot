@@ -7,8 +7,16 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import SignUpPage from '../../pages/Signup/Signup';
 import SignInPage from '../../pages/SignIn/Signin';
 import styles from './App.module.scss';
+import { useEffect } from 'react';
+import useTelegram from '../../services/hooks/useTelegram';
 
 function App() {
+  const { tg } = useTelegram();
+
+  useEffect(() => {
+    tg.ready();
+  },[])
+
   return (
     <div className={styles.app}>
       <Router basename={process.env.PUBLIC_URL}>

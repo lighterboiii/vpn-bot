@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/vpn-bot/static/css/main.61e878e7.css",
-    "main.js": "/vpn-bot/static/js/main.5768e562.js",
+    "main.js": "/vpn-bot/static/js/main.c44675c5.js",
     "static/js/453.76564a7c.chunk.js": "/vpn-bot/static/js/453.76564a7c.chunk.js",
     "index.html": "/vpn-bot/index.html",
     "main.61e878e7.css.map": "/vpn-bot/static/css/main.61e878e7.css.map",
-    "main.5768e562.js.map": "/vpn-bot/static/js/main.5768e562.js.map",
+    "main.c44675c5.js.map": "/vpn-bot/static/js/main.c44675c5.js.map",
     "453.76564a7c.chunk.js.map": "/vpn-bot/static/js/453.76564a7c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.61e878e7.css",
-    "static/js/main.5768e562.js"
+    "static/js/main.c44675c5.js"
   ]
 }

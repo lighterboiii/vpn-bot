@@ -7,29 +7,25 @@ import useTelegram from "../../services/hooks/useTelegram";
 import Button from "../../components/Button/Button";
 import { profileUrl } from "../../utils/routes";
 import Card from "../../components/Card/Card";
-
-const items = [
-  { id: 1, name: 'Базовый план', price: '4999/год' },
-  { id: 2, name: 'Премиум план', price: '9999/год' }
-]
+import { items } from "../../utils/mockSubscriptionData";
 
 const SubscriptionPage: FC = () => {
   const { tg, onAppClose, queryId } = useTelegram();
   const navigate = useNavigate();
-  const [selectedPlan, setSelectedPlan] = useState('');
+  const [selectedPlan, setSelectedPlan] = useState<any>(null);
 
   const handleSendData = useCallback(() => {
-    const data = {
-      selectedPlan: selectedPlan,
-      queryId
-    };
-    fetch('http://91.236.199.185:8000/vpn-bot', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data)
-    })
+    // const data = {
+    //   selectedPlan: selectedPlan,
+    //   queryId
+    // };
+    // fetch('http://91.236.199.185:8000/vpn-bot', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(data)
+    // })
     onAppClose();
   }, [selectedPlan]);
 
@@ -40,14 +36,14 @@ const SubscriptionPage: FC = () => {
     }
   }, [handleSendData]);
 
-  const handleButtonClick = (plan: string) => {
+  const handleChoosePlan = (plan: any) => {
     setSelectedPlan(plan);
   };
 
   useEffect(() => {
     if (selectedPlan) {
       tg.MainButton.setParams({
-        text: 'К оплате',
+        text: `К оплате ${selectedPlan.price}`,
       });
       tg.MainButton.show();
     } else {
@@ -67,7 +63,7 @@ const SubscriptionPage: FC = () => {
           <Card
             key={item.id}
             item={item}
-            handleClick={handleButtonClick}
+            handleClick={handleChoosePlan}
           />
         ))}
       </div>

@@ -12,7 +12,7 @@ const Card: FC<ICard> = ({ handleClick, item }) => {
         <button
           type="button"
           className={styles.card__button}
-          onClick={handleClick}
+          onClick={() => handleClick(item)}
         >
           {/* <img src="" alt="premium_plan_img" /> */}
           <p className={styles.card__name}>{item.name}</p>

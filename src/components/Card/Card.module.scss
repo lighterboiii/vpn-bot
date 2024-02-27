@@ -1,0 +1,25 @@
+@use '../../stylesheets/mixins' as *;
+
+.card {
+  @include flex(row, center, center);
+  @include indents();
+
+  &__button {
+    @include button-style-reset();
+    @include indents(40px 20px, 0);
+    color: var(--tg-theme-button-text-color);
+    border: 1px var(--tg-theme-hint-color) solid;
+    background-color: var(--tg-theme-button-color);
+    border-radius: 20px;
+  }
+
+  &__name {
+    font-size: 18px;
+    color: var(--tg-theme-text-color);
+  }
+
+  &__price {
+    font-size: 16px;
+    color: var(--tg-theme-accent-text-color);
+  }
+}

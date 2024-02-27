@@ -5,7 +5,7 @@
   @include flex(column, center, center, 8px);
   @include size(100%, 40%);
   border-radius: 20px;
-  background-color: var(--tg-theme-section-bg-color);
+  border: 1px var(--tg-theme-section-bg-color) solid;
 
   &__input {
     @include indents(16px, 0);

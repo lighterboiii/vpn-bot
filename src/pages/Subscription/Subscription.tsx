@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import useTelegram from "../../services/hooks/useTelegram";
 import Button from "../../components/Button/Button";
 import { profileUrl } from "../../utils/routes";
+import Card from "../../components/Card/Card";
 
 const items = [
   { id: 1, name: 'Базовый план', price: '4999/год' },
@@ -22,7 +23,6 @@ const SubscriptionPage: FC = () => {
       selectedPlan: selectedPlan,
       queryId
     };
-    // tg.sendData(JSON.stringify(data));
     fetch('http://91.236.199.185:8000/vpn-bot', {
       method: 'POST',
       headers: {
@@ -53,32 +53,23 @@ const SubscriptionPage: FC = () => {
     } else {
       tg.MainButton.hide();
     }
-  
+
     return () => {
       tg.MainButton.hide();
     };
   }, [selectedPlan, tg.MainButton]);
-  
+
   return (
     <div className={styles.subscription}>
       <h3 className={styles.subscription__title}>Выберите план подписки:</h3>
       <div className={styles.subscription__grid}>
-        <button
-          type="button"
-          className={styles.subscription__planButton}
-          onClick={() => handleButtonClick('Базовый план')}
-        >
-          <img src="" alt="basic_plan_img" />
-          <p>Базовый план 4999р/год</p>
-        </button>
-        <button
-          type="button"
-          className={styles.subscription__planButton}
-          onClick={() => handleButtonClick('Премиум план')}
-        >
-          <img src="" alt="premium_plan_img" />
-          <p>Премиум план 9999р/год</p>
-        </button>
+        {items.map(item => (
+          <Card
+            key={item.id}
+            item={item}
+            handleClick={handleButtonClick}
+          />
+        ))}
       </div>
       <Button text="Назад" handleClick={() => navigate(profileUrl)} />
     </div>

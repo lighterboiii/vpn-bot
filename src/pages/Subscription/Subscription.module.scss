@@ -15,15 +15,6 @@
     @include flex(row, center, center, 18px);
     @include indents(60px 20px, 0);
     border-radius: 20px;
-    background-color: var(--tg-theme-section-bg-color);
-  }
-
-  &__planButton {
-    @include button-style-reset();
-    @include indents(40px 20px, 0);
-    color: var(--tg-theme-button-text-color);
-    border: 1px var(--tg-theme-accent-text-color) solid;
-    background-color: var(--tg-theme-button-color);
-    border-radius: 20px;
+    border: 1px var(--tg-theme-section-bg-color) solid;
   }
 }

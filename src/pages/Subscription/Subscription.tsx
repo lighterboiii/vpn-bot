@@ -42,16 +42,23 @@ const SubscriptionPage: FC = () => {
 
   const handleButtonClick = (plan: string) => {
     setSelectedPlan(plan);
+  };
+
+  useEffect(() => {
     if (selectedPlan) {
       tg.MainButton.setParams({
         text: 'К оплате',
-      })
+      });
       tg.MainButton.show();
+    } else {
+      tg.MainButton.hide();
     }
-    tg.MainButton.hide();
-  };
-
-  console.log(selectedPlan);
+  
+    return () => {
+      tg.MainButton.hide();
+    };
+  }, [selectedPlan, tg.MainButton]);
+  
   return (
     <div className={styles.subscription}>
       <h3 className={styles.subscription__title}>Выберите план подписки:</h3>

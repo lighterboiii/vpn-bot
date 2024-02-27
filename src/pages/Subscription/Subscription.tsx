@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { FC, useCallback, useState, useEffect } from "react";
 import styles from './Subscription.module.scss';
 import { useNavigate } from "react-router-dom";
@@ -11,20 +13,24 @@ const items = [
 ]
 
 const SubscriptionPage: FC = () => {
-  const { tg } = useTelegram();
+  const { tg, onAppClose, queryId } = useTelegram();
   const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState('');
 
   const handleSendData = useCallback(() => {
-    const data = selectedPlan;
-    tg.sendData(JSON.stringify(data));
-    fetch('http://localhost:3000/vpn-bot', {
+    const data = {
+      selectedPlan: selectedPlan,
+      queryId
+    };
+    // tg.sendData(JSON.stringify(data));
+    fetch('http://91.236.199.185:8000/vpn-bot', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data)
     })
+    onAppClose();
   }, [selectedPlan]);
 
   useEffect(() => {

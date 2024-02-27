@@ -17,7 +17,7 @@ const SignInPage: FC = () => {
   });
   // не забыть про валидацию полей
   // сделать миксин стилей для формы или создать отдельный компонент
-  console.log(values);
+  console.log(values.email);
   const fields = signInPageFormFields(values);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const SignInPage: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (!values) {
+    if (!values.email || !values.password) {
       tg.MainButton.hide();
     } else {
       tg.MainButton.show();

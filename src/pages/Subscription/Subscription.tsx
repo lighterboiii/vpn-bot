@@ -13,28 +13,27 @@ const SubscriptionPage: FC = () => {
   const { tg, onAppClose, queryId } = useTelegram();
   const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState<any>(null);
+  console.log(selectedPlan);
+  const handleSendData = () => {
+    const data = {
+      selectedPlan,
+      queryId
+    };
+    fetch('http://91.236.199.185:8000/web-data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
+  }
 
-  const handleSendData = useCallback(() => {
-    // const data = {
-    //   selectedPlan: selectedPlan,
-    //   queryId
-    // };
-    // fetch('http://91.236.199.185:8000/vpn-bot', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(data)
-    // })
-    onAppClose();
-  }, [selectedPlan]);
-
-  useEffect(() => {
-    tg.onEvent('mainButtonClicked', handleSendData)
-    return () => {
-      tg.offEvent('mainButtonClicked', handleSendData)
-    }
-  }, [handleSendData]);
+  // useEffect(() => {
+  //   tg.onEvent('mainButtonClicked', handleSendData)
+  //   return () => {
+  //     tg.offEvent('mainButtonClicked', handleSendData)
+  //   }
+  // }, [handleSendData]);
 
   const handleChoosePlan = (plan: any) => {
     setSelectedPlan(plan);
@@ -68,6 +67,7 @@ const SubscriptionPage: FC = () => {
         ))}
       </div>
       <Button text="Назад" handleClick={() => navigate(profileUrl)} />
+      <button onClick={handleSendData}></button>
     </div>
   )
 };

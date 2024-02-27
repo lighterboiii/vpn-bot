@@ -5,6 +5,11 @@ import useTelegram from "../../services/hooks/useTelegram";
 import Button from "../../components/Button/Button";
 import { profileUrl } from "../../utils/routes";
 
+const items = [
+  { id: 1, name: 'Базовый план', price: '4999/год' },
+  { id: 2, name: 'Премиум план', price: '9999/год' }
+]
+
 const SubscriptionPage: FC = () => {
   const { tg } = useTelegram();
   const navigate = useNavigate();
@@ -13,25 +18,31 @@ const SubscriptionPage: FC = () => {
   const handleSendData = useCallback(() => {
     const data = selectedPlan;
     tg.sendData(JSON.stringify(data));
+    fetch('http://localhost:3000/vpn-bot', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
   }, [selectedPlan]);
 
-    useEffect(() => {
-      tg.onEvent('mainButtonClicked', handleSendData)
-      return () => {
-          tg.offEvent('mainButtonClicked', handleSendData)
-      }
+  useEffect(() => {
+    tg.onEvent('mainButtonClicked', handleSendData)
+    return () => {
+      tg.offEvent('mainButtonClicked', handleSendData)
+    }
   }, [handleSendData]);
 
   const handleButtonClick = (plan: string) => {
-    setSelectedPlan(plan)
+    setSelectedPlan(plan);
     if (selectedPlan) {
       tg.MainButton.setParams({
         text: 'К оплате',
       })
       tg.MainButton.show();
-    } else {
-      tg.MainButton.hide();
     }
+    tg.MainButton.hide();
   };
 
   console.log(selectedPlan);

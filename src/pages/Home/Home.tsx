@@ -30,14 +30,6 @@ const HomePage: FC = () => {
         <h2 className={styles.home__title}>{`Привет, ${user?.first_name}`}</h2>
         <p className={styles.home__text}>Добро пожаловать в сервис управления доступом к самому лучшему в мире VPN-сервису</p>
       </div>
-      {/* <nav className={styles.home__buttons}>
-        <button className={styles.home__button} onClick={() => navigate(signinUrl)}>
-          Войти
-        </button>
-        <button className={styles.home__button} onClick={() => navigate(signupUrl)}>
-          Регистрация
-        </button>
-      </nav> */}
     </div>
   )
 }

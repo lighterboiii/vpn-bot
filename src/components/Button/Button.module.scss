@@ -1,0 +1,10 @@
+@use '../../stylesheets/mixins' as *;
+
+.button {
+  @include button-style-reset();
+  @include indents(16px 24px, 0);
+  @include size(240px, unset);
+  background: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  border-radius: 25px;
+}

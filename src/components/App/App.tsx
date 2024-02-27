@@ -2,7 +2,7 @@ import HomePage from '../../pages/Home/Home';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ProfilePage from '../../pages/Profile/Profile';
-import PurchasePage from '../../pages/Purchase/Purchase';
+import PurchasePage from '../../pages/Subscription/Subscription';
 import { homeUrl, signinUrl, signupUrl, profileUrl, purchaseUrl } from '../../utils/routes';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import SignUpPage from '../../pages/Signup/Signup';

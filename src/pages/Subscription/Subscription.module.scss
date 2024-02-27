@@ -1,0 +1,28 @@
+@use '../../stylesheets/mixins' as *;
+
+.subscription {
+  @include indents();
+  @include flex(column, center, center, 16px);
+  @include size(100%, 100%);
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--tg-theme-accent-text-color);
+  }
+
+  &__grid {
+    @include flex(row, center, center, 18px);
+    @include indents(60px 20px, 0);
+    border-radius: 20px;
+    background-color: var(--tg-theme-secondary-bg-color);
+  }
+
+  &__planButton {
+    @include button-style-reset();
+    @include indents(40px 20px, 0);
+    border: 1px var(--tg-theme-accent-text-color) solid;
+    background-color: var(--tg-theme-button-color);
+    border-radius: 20px;
+  }
+}

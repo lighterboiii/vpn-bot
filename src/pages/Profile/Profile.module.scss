@@ -4,12 +4,7 @@
   @include indents(20px, 0);
   @include flex(column, center, center, 16px);
   @include size(100%, 100%);
-
-  &__button {
-    @include main-button-style();
-    @include size(240px, unset);
-    align-self: center;
-  }
+  border: 1px red solid;
 
   &__link {
     text-decoration: none;

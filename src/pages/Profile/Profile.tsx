@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import styles from './Profile.module.scss';
 import { signinUrl } from "../../utils/routes";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "../../components/Button/Button";
 
 const ProfilePage: FC = () => {
   const navigate = useNavigate();
@@ -24,13 +25,14 @@ const ProfilePage: FC = () => {
             }
             </p>
         <Link to='/pay' className={styles.profile__link}>Перейти к конфигурации</Link>
-        <button
+        <Button text="Выход" handleClick={() => navigate(signinUrl)} />
+        {/* <button
           type="button"
           onClick={() => navigate(signinUrl)}
           className={styles.profile__button}
         >
           Выход
-        </button>
+        </button> */}
     </div>
   )
 }

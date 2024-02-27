@@ -14,7 +14,7 @@ const SubscriptionPage: FC = () => {
   const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState<any>(null);
   console.log(selectedPlan);
-  const handleSendData = () => {
+  const handleSendData = useCallback(() => {
     const data = {
       selectedPlan,
       queryId
@@ -26,7 +26,7 @@ const SubscriptionPage: FC = () => {
       },
       body: JSON.stringify(data)
     })
-  }
+  }, [selectedPlan, queryId]);
 
   useEffect(() => {
     tg.onEvent('mainButtonClicked', handleSendData)
@@ -67,7 +67,7 @@ const SubscriptionPage: FC = () => {
         ))}
       </div>
       <Button text="Назад" handleClick={() => navigate(profileUrl)} />
-      {/* <button onClick={handleSendData}></button> */}
+      <button onClick={handleSendData}></button>
     </div>
   )
 };

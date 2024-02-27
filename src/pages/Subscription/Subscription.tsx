@@ -22,6 +22,18 @@ const SubscriptionPage: FC = () => {
       }
   }, [handleSendData]);
 
+  const handleButtonClick = (plan: string) => {
+    setSelectedPlan(plan)
+    if (selectedPlan) {
+      tg.MainButton.setParams({
+        text: 'К оплате',
+      })
+      tg.MainButton.show();
+    } else {
+      tg.MainButton.hide();
+    }
+  };
+
   console.log(selectedPlan);
   return (
     <div className={styles.subscription}>
@@ -30,7 +42,7 @@ const SubscriptionPage: FC = () => {
         <button
           type="button"
           className={styles.subscription__planButton}
-          onClick={() => setSelectedPlan('Базовый план 4999р/год')}
+          onClick={() => handleButtonClick('Базовый план')}
         >
           <img src="" alt="basic_plan_img" />
           <p>Базовый план 4999р/год</p>
@@ -38,7 +50,7 @@ const SubscriptionPage: FC = () => {
         <button
           type="button"
           className={styles.subscription__planButton}
-          onClick={() => setSelectedPlan('Премиум план 9999р/год')}
+          onClick={() => handleButtonClick('Премиум план')}
         >
           <img src="" alt="premium_plan_img" />
           <p>Премиум план 9999р/год</p>

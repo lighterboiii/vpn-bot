@@ -1,8 +1,8 @@
 @use '../../stylesheets/mixins' as *;
 
 .form {
-  @include indents();
-  @include flex(column, center, center, 16px);
+  @include indents(0, 16px 0);
+  @include flex(column, center, center, 8px);
   @include size(100%, 40%);
   border-radius: 20px;
   background-color: var(--tg-theme-section-bg-color);
@@ -10,6 +10,7 @@
   &__input {
     @include indents(16px, 0);
     @include size(290px, unset);
+    color: var(--tg-theme-text-color);
     background-color:  var(--tg-theme-section-bg-color);
     border: .5px var(--tg-theme-accent-text-color) solid;
     border-radius: 10px;

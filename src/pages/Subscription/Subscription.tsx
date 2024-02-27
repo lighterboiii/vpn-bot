@@ -8,11 +8,12 @@ import Button from "../../components/Button/Button";
 import { profileUrl } from "../../utils/routes";
 import Card from "../../components/Card/Card";
 import { items } from "../../utils/mockSubscriptionData";
+import { TSubscription } from "../../types/types";
 
 const SubscriptionPage: FC = () => {
   const { tg, onAppClose, queryId } = useTelegram();
   const navigate = useNavigate();
-  const [selectedPlan, setSelectedPlan] = useState<any>(null);
+  const [selectedPlan, setSelectedPlan] = useState<TSubscription | null>(null);
   console.log(selectedPlan);
   const handleSendData = useCallback(() => {
     const data = {
@@ -35,7 +36,7 @@ const SubscriptionPage: FC = () => {
     }
   }, [handleSendData]);
 
-  const handleChoosePlan = (plan: any) => {
+  const handleChoosePlan = (plan: TSubscription) => {
     setSelectedPlan(plan);
   };
 
@@ -67,7 +68,6 @@ const SubscriptionPage: FC = () => {
         ))}
       </div>
       <Button text="Назад" handleClick={() => navigate(profileUrl)} />
-      <button onClick={handleSendData}></button>
     </div>
   )
 };

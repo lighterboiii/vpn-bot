@@ -20,17 +20,20 @@ const SignInPage: FC = () => {
   console.log(values.email);
   const fields = signInPageFormFields(values);
 
+  const handleMainButtonClicked = () => {
+    navigate(profileUrl);
+  }
+
   useEffect(() => {
     tg.MainButton.setParams({
       text: 'Войти',
     })
     tg.MainButton.show();
-    tg.MainButton.onClick(() => {
-      navigate(profileUrl);
-    })
+    tg.onEvent('mainButtonClicked', handleMainButtonClicked)
 
     return () => {
       tg.MainButton.hide();
+      tg.offEvent('mainButtonClicked', handleMainButtonClicked)
     }
   }, []);
 
@@ -49,7 +52,7 @@ const SignInPage: FC = () => {
 
   return (
     <div className={styles.signin}>
-      <h2 className={styles.signin__title}>Вход</h2>
+      <h2 className={styles.signin__title}>Войти</h2>
       <UniversalForm
         fields={fields}
         handleSubmit={onFormSubmit}

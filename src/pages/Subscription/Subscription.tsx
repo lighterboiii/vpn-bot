@@ -28,12 +28,12 @@ const SubscriptionPage: FC = () => {
     })
   }
 
-  // useEffect(() => {
-  //   tg.onEvent('mainButtonClicked', handleSendData)
-  //   return () => {
-  //     tg.offEvent('mainButtonClicked', handleSendData)
-  //   }
-  // }, [handleSendData]);
+  useEffect(() => {
+    tg.onEvent('mainButtonClicked', handleSendData)
+    return () => {
+      tg.offEvent('mainButtonClicked', handleSendData)
+    }
+  }, [handleSendData]);
 
   const handleChoosePlan = (plan: any) => {
     setSelectedPlan(plan);
@@ -67,7 +67,7 @@ const SubscriptionPage: FC = () => {
         ))}
       </div>
       <Button text="Назад" handleClick={() => navigate(profileUrl)} />
-      <button onClick={handleSendData}></button>
+      {/* <button onClick={handleSendData}></button> */}
     </div>
   )
 };

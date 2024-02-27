@@ -1,25 +1,27 @@
 import { FC, useEffect } from "react";
 import styles from './Home.module.scss';
 import { useNavigate } from "react-router-dom";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { signinUrl, signupUrl } from "../../utils/routes";
+import { signinUrl } from "../../utils/routes";
 import useTelegram from "../../services/hooks/useTelegram";
 
 const HomePage: FC = () => {
   const navigate = useNavigate();
   const { user, tg } = useTelegram();
 
+  const handleMainButtonClicked = () => {
+    navigate(signinUrl);
+  };
+
   useEffect(() => {
     tg.MainButton.setParams({
       text: 'Продолжить',
     })
     tg.MainButton.show();
-    tg.MainButton.onClick(() => {
-      navigate(signinUrl);
-    })
+    tg.onEvent('mainButtonClicked', handleMainButtonClicked)
 
     return () => {
       tg.MainButton.hide();
+      tg.offEvent('mainButtonClicked', handleMainButtonClicked)
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

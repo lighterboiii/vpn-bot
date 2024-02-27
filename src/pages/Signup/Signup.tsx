@@ -20,17 +20,20 @@ const SignUpPage: FC = () => {
   const { tg } = useTelegram();
   const fields = signUpPageFormFields(values);
 
+  const handleMainButtonClicked = () => {
+    navigate(profileUrl);
+  }
+
   useEffect(() => {
     tg.MainButton.setParams({
       text: 'Регистрация',
     })
     tg.MainButton.show();
-    tg.MainButton.onClick(() => {
-      navigate(profileUrl);
-    })
+    tg.onEvent('mainButtonClicked', handleMainButtonClicked)
 
     return () => {
       tg.MainButton.hide();
+      tg.offEvent('mainButtonClicked', handleMainButtonClicked)
     }
   }, []);
 

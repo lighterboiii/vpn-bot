@@ -4,7 +4,6 @@
   @include indents(20px, 0);
   @include flex(column, center, center, 16px);
   @include size(100%, 100%);
-  border: 1px red solid;
 
   &__link {
     text-decoration: none;

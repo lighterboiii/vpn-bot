@@ -4,12 +4,12 @@
   @include indents();
   @include flex(column, center, center, 16px);
   @include size(100%, 40%);
-  // border: 1px var(--tg-theme-accent-text-color) solid;
-  background-color: var(--tg-theme-secondary-bg-color);
+  border-radius: 20px;
+  background-color: var(--tg-theme-section-bg-color);
 
   &__input {
     @include indents(16px, 0);
-    @include size(360px, unset);
+    @include size(290px, unset);
     background-color:  var(--tg-theme-section-bg-color);
     border: .5px var(--tg-theme-accent-text-color) solid;
     border-radius: 10px;

@@ -15,7 +15,7 @@
     @include flex(row, center, center, 18px);
     @include indents(60px 20px, 0);
     border-radius: 20px;
-    background-color: var(--tg-theme-secondary-bg-color);
+    background-color: var(--tg-theme-section-bg-color);
   }
 
   &__planButton {

@@ -21,7 +21,9 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router 
+      // basename={process.env.PUBLIC_URL}
+      >
         <Routes>
           <Route path={signinUrl} element={<ProtectedRoute children={<SignInPage />} notAuth />} />
           <Route path={signupUrl} element={<ProtectedRoute children={<SignUpPage />} notAuth />} />

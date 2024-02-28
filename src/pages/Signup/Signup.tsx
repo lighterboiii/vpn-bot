@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { FC, FormEvent, useEffect } from "react";
+import { FC } from "react";
 import styles from './Signup.module.scss';
 import { Link, useNavigate } from "react-router-dom";
 import useForm from "../../services/hooks/useForm";

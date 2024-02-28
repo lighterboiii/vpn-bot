@@ -24,39 +24,40 @@ const SignUpPage: FC = () => {
     navigate(profileUrl);
   }
 
-  useEffect(() => {
-    tg.MainButton.setParams({
-      text: 'Регистрация',
-    })
-    tg.MainButton.show();
-    tg.onEvent('mainButtonClicked', handleMainButtonClicked)
+  // useEffect(() => {
+  //   tg.MainButton.setParams({
+  //     text: 'Регистрация',
+  //   })
+  //   tg.MainButton.show();
+  //   tg.onEvent('mainButtonClicked', handleMainButtonClicked)
 
-    return () => {
-      tg.MainButton.hide();
-      tg.offEvent('mainButtonClicked', handleMainButtonClicked)
-    }
-  }, []);
+  //   return () => {
+  //     tg.MainButton.hide();
+  //     tg.offEvent('mainButtonClicked', handleMainButtonClicked)
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    if (!values.email || !values.password || !values.phone || !values.name) {
-      tg.MainButton.hide();
-    } else {
-      tg.MainButton.show();
-    }
-  }, [values])
+  // useEffect(() => {
+  //   if (!values.email || !values.password || !values.phone || !values.name) {
+  //     tg.MainButton.hide();
+  //   } else {
+  //     tg.MainButton.show();
+  //   }
+  // }, [values])
 
-  const onFormSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    navigate(profileUrl);
-  };
+  // const onFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   navigate(profileUrl);
+  // };
   
   return (
     <div className={styles.signup}>
       <h2 className={styles.signup__title}>Зарегистрируйтесь для продолжения</h2>
       <UniversalForm
         fields={fields}
-        handleSubmit={onFormSubmit}
+        handleSubmit={handleMainButtonClicked}
         handleChange={handleChange}
+        mainButtonText='Регистрация'
       />
       <div className={styles.signup__linkContainer}>
         <p className={styles.signup__text}>Уже зарегистрированы?

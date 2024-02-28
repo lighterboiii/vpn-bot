@@ -2,6 +2,8 @@
 import React, { FC, FormEvent, useCallback, useEffect } from "react";
 import styles from './UniversalForm.module.scss';
 import useTelegram from "../../services/hooks/useTelegram";
+import { useNavigate } from "react-router-dom";
+import { profileUrl } from "../../utils/routes";
 
 interface Field {
   type: string;
@@ -25,6 +27,7 @@ const UniversalForm: FC<IUniversalFormProps> = ({
   mainButtonText
 }) => {
   const { tg } = useTelegram();
+  const navigate = useNavigate();
   // функция отправки данных формы на сервер
   const onSendData = useCallback(() => {
     const data: { [key: string]: string } = {}
@@ -32,7 +35,9 @@ const UniversalForm: FC<IUniversalFormProps> = ({
       data[field.name] = field.value;
     });
     tg.sendData(JSON.stringify(data));
+    navigate(profileUrl)
   }, [fields])
+
   // вешаем/сбрасываем обработчик событий на кнопке
   useEffect(() => {
     tg.onEvent('mainButtonClicked', onSendData)

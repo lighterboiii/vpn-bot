@@ -14,7 +14,6 @@ const Card: FC<ICard> = ({ handleClick, item }) => {
           className={styles.card__button}
           onClick={() => handleClick(item)}
         >
-          {/* <img src="" alt="premium_plan_img" /> */}
           <p className={styles.card__name}>{item.name}</p>
           <p className={styles.card__price}>{item.price}</p>
         </button>

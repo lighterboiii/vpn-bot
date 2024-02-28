@@ -5,10 +5,15 @@
   @include flex(column, center, center, 16px);
   @include size(100%, 100%);
 
-  &__link {
-    text-decoration: none;
-    color: var(--tg-theme-link-color);
+  &__buttons {
+    @include flex(row, center, center, 16px);
+    @include size(100%, unset);
   }
+
+  // &__link {
+  //   text-decoration: none;
+  //   color: var(--tg-theme-link-color);
+  // }
 
   &__subStatus {
     color: green;

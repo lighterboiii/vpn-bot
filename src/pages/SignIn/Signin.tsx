@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { FC, FormEvent, useEffect } from 'react';
+import { FC } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import styles from './Signin.module.scss';
 import useForm from '../../services/hooks/useForm';
@@ -23,33 +23,7 @@ const SignInPage: FC = () => {
 
   const handleMainButtonClicked = () => {
     navigate(profileUrl);
-  }
-
-  // useEffect(() => {
-  //   tg.MainButton.setParams({
-  //     text: 'Войти',
-  //   })
-  //   tg.MainButton.show();
-  //   tg.onEvent('mainButtonClicked', handleMainButtonClicked)
-
-  //   return () => {
-  //     tg.MainButton.hide();
-  //     tg.offEvent('mainButtonClicked', handleMainButtonClicked)
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   if (!values.email || !values.password) {
-  //     tg.MainButton.hide();
-  //   } else {
-  //     tg.MainButton.show();
-  //   }
-  // }, [values])
-
-  // const onFormSubmit = (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   navigate(profileUrl);
-  // };
+  };
 
   return (
     <div className={styles.signin}>

@@ -23,33 +23,7 @@ const SignUpPage: FC = () => {
 
   const handleMainButtonClicked = () => {
     navigate(profileUrl);
-  }
-
-  // useEffect(() => {
-  //   tg.MainButton.setParams({
-  //     text: 'Регистрация',
-  //   })
-  //   tg.MainButton.show();
-  //   tg.onEvent('mainButtonClicked', handleMainButtonClicked)
-
-  //   return () => {
-  //     tg.MainButton.hide();
-  //     tg.offEvent('mainButtonClicked', handleMainButtonClicked)
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   if (!values.email || !values.password || !values.phone || !values.name) {
-  //     tg.MainButton.hide();
-  //   } else {
-  //     tg.MainButton.show();
-  //   }
-  // }, [values])
-
-  // const onFormSubmit = (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   navigate(profileUrl);
-  // };
+  };
   
   return (
     <div className={styles.signup}>
@@ -58,7 +32,7 @@ const SignUpPage: FC = () => {
         fields={fields}
         handleSubmit={handleMainButtonClicked}
         handleChange={handleChange}
-        mainButtonText='Регистрация'
+        mainButtonText="Регистрация"
       />
       <div className={styles.signup__linkContainer}>
         <p className={styles.signup__text}>Уже зарегистрированы?

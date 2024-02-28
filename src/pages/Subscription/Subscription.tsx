@@ -11,10 +11,10 @@ import { items } from "../../utils/mockSubscriptionData";
 import { TSubscription } from "../../types/types";
 
 const SubscriptionPage: FC = () => {
-  const { tg, onAppClose, queryId } = useTelegram();
+  const { tg, queryId } = useTelegram();
   const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState<TSubscription | null>(null);
-  console.log(selectedPlan);
+
   const handleSendData = useCallback(() => {
     const data = {
       selectedPlan,

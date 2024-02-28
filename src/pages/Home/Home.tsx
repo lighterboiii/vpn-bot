@@ -23,15 +23,13 @@ const HomePage: FC = () => {
       tg.MainButton.hide();
       tg.offEvent('mainButtonClicked', handleMainButtonClicked)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className={styles.home}>
-      <div className={styles.home__header}>
-        <h2 className={styles.home__title}>{`Привет, ${user?.first_name}`}</h2>
-        <p className={styles.home__text}>Добро пожаловать в сервис управления доступом к самому лучшему в мире VPN-сервису</p>
-      </div>
+      <h2 className={styles.home__title}>{user?.first_name ? `Привет, ${user?.first_name}` : 'Привет'}</h2>
+      <p className={styles.home__text}>Добро пожаловать в сервис управления доступом к самому лучшему в мире VPN-сервису</p>
     </div>
   )
 }

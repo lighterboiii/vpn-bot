@@ -7,11 +7,11 @@
   &__button {
     @include flex(column, center, center, 8px);
     @include button-style-reset();
-    @include indents(40px 20px, 0);
+    @include indents(16px 10px, 0);
     color: var(--tg-theme-button-text-color);
     border: 1px var(--tg-theme-hint-color) solid;
     background-color: var(--tg-theme-button-color);
-    border-radius: 20px;
+    border-radius: 25px;
   }
 
   &__name {

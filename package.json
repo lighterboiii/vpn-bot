@@ -1,6 +1,5 @@
 {
   "name": "vpn-bot",
-  // "homepage": "https://lighterboiii.github.io/vpn-bot",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

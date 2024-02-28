@@ -50,6 +50,7 @@ const UniversalForm: FC<IUniversalFormProps> = ({
     tg.MainButton.setParams({
       text: `${mainButtonText}`
     })
+    tg.MainButton.hide();
   }, [])
   // скрываем кнопку при хотя бы одном пустом поле
   useEffect(() => {

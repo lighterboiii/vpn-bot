@@ -1,9 +1,10 @@
 import { FC } from "react";
 import styles from './Card.module.scss';
+import { TSubscription } from "../../types/types";
 
 interface ICard {
-  handleClick: any
-  item: any;
+  handleClick: (item: TSubscription) => void;
+  item: TSubscription;
 }
 
 const Card: FC<ICard> = ({ handleClick, item }) => {

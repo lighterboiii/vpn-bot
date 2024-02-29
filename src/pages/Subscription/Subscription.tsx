@@ -20,14 +20,20 @@ const SubscriptionPage: FC = () => {
       selectedPlan,
       queryId
     };
-    fetch('http://91.236.199.185:8000/web-data', {
+    fetch('http://91.236.199.185:8000', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data)
     })
-  }, [selectedPlan, queryId]);
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Ошибка отправки данных");
+      }
+      return response.json();
+    })
+  }, [selectedPlan]);
 
   useEffect(() => {
     tg.onEvent('mainButtonClicked', handleSendData)
@@ -68,6 +74,7 @@ const SubscriptionPage: FC = () => {
         ))}
       </div>
       <Button text="Назад" handleClick={() => navigate(profileUrl)} />
+      <button onClick={handleSendData}>test</button>
     </div>
   )
 };

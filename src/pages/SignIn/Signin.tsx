@@ -7,18 +7,14 @@ import useForm from '../../services/hooks/useForm';
 import { profileUrl } from '../../utils/routes';
 import { signInPageFormFields } from '../../utils/mockFormFieldsData';
 import UniversalForm from '../../components/UniversalForm/UniversalForm';
-import useTelegram from '../../services/hooks/useTelegram';
 
 const SignInPage: FC = () => {
   const navigate = useNavigate();
-  const { tg } = useTelegram();
   const { values, handleChange } = useForm({
     email: { value: '' },
     password: { value: '' }
   });
   // не забыть про валидацию полей
-  // сделать миксин стилей для формы или создать отдельный компонент
-
   const fields = signInPageFormFields(values);
 
   const handleMainButtonClicked = () => {

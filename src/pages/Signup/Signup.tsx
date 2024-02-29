@@ -7,7 +7,6 @@ import useForm from "../../services/hooks/useForm";
 import { signUpPageFormFields } from "../../utils/mockFormFieldsData";
 import UniversalForm from "../../components/UniversalForm/UniversalForm";
 import { profileUrl } from "../../utils/routes";
-import useTelegram from "../../services/hooks/useTelegram";
 
 const SignUpPage: FC = () => {
   const navigate = useNavigate();
@@ -18,7 +17,6 @@ const SignUpPage: FC = () => {
     password: { value: '' }
   }); 
   // не забыть про валидацию полей выше
-  const { tg } = useTelegram();
   const fields = signUpPageFormFields(values);
 
   const handleMainButtonClicked = () => {
